@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7891566648241915576}
   - component: {fileID: 1102715222290780336}
   - component: {fileID: 4004986038555452313}
-  - component: {fileID: 5502826318977901834}
+  - component: {fileID: -399939383583938312}
   m_Layer: 7
-  m_Name: Bomb
+  m_Name: PoisonThrowable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.07, y: 3.07, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.26398712, y: 0.26398712, z: 0.26398712}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2613247888821195678, guid: 62404779623780840a4af43e7f0c6895, type: 3}
+  m_Sprite: {fileID: -3121208411146555972, guid: d2bcd44f2dd1a7b41be36284966fc8f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,7 +153,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.110685945, y: -0.02929926}
   m_Radius: 0.3655913
---- !u!114 &5502826318977901834
+--- !u!114 &-399939383583938312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,15 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6d50a3bb4b77546a89de870ed292ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionRadius: 2.5
-  explosionForce: 15
-  upwardsModifier: 2
-  torqueForce: 4
-  explosionDamage: 50
-  affectedLayers:
-    serializedVersion: 2
-    m_Bits: 64
+  layerConfig: {fileID: 11400000, guid: edea5fba0e6211947975ac22174ec305, type: 2}
+  explosionEffect: {fileID: 7558761803758786324, guid: e1e1bafe7486e0c4baf84cae8a67997f, type: 3}
   triggerLayers:
     serializedVersion: 2
     m_Bits: 576
-  sparkEffectPrefab: {fileID: 8826737781577399888, guid: 18f1afe81fed1004585576bba9ad87c0, type: 3}
