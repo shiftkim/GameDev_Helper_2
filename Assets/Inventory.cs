@@ -1,14 +1,11 @@
 using UnityEngine;
 using System;
-using System.Collections.Generic;
 
 public class Inventory : MonoBehaviour
 {
+    private InventoryData _data;
     public static Inventory Instance { get; private set; }
     public static event Action<int> OnCoinsChanged;
-
-    private InventoryData _data;
-
     public int Coins => _data.coins;
 
     private void Awake()
@@ -18,27 +15,11 @@ public class Inventory : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             _data = SaveManager.LoadData();
-            OnCoinsChanged?.Invoke(Coins);
         }
         else
         {
             Destroy(gameObject);
         }
-    }
-
-    private void OnEnable()
-    {
-        Item.OnItemDestroyed += AddCoins;
-    }
-    
-    private void OnDisable()
-    {
-        Item.OnItemDestroyed -= AddCoins;
-    }
-    
-    private void OnApplicationQuit()
-    {
-        SaveManager.SaveData(_data);
     }
 
     public bool TryBuyItem(ItemInfo item)
@@ -57,18 +38,43 @@ public class Inventory : MonoBehaviour
     public bool IsItemPurchased(string id) =>
         _data.PurchasedItems.TryGetValue(id, out var purchased) && purchased;
 
+    private void Start()
+    {
+        OnCoinsChanged?.Invoke(Coins);
+    }
+    
+    // public void ResetShop()
+    // {
+    //     Debug.Log("Resetting shop - clearing all purchases");
+    //     _data.PurchasedItems.Clear();
+    //     _data.coins = 0;
+    //     SaveManager.SaveData(_data);
+    //     OnCoinsChanged?.Invoke(Coins);
+    // }
+    
+    private void OnEnable()
+    {
+        Item.OnItemDestroyed += AddCoins;
+    }
+    
+    private void OnDisable()
+    {
+        Item.OnItemDestroyed -= AddCoins;
+    }
+    
     public void AddCoins(int amount)
     {
         _data.coins += amount;
         SaveManager.SaveData(_data);
         OnCoinsChanged?.Invoke(Coins);
     }
+    
+    private void OnApplicationQuit()
+    {
+        SaveManager.SaveData(_data);
+    }
+    
 }
 
 
-[Serializable]
-public class InventoryData
-{
-    public int coins;
-    public Dictionary<string, bool> PurchasedItems = new();
-}
+

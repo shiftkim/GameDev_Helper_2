@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 981360619836327132}
   - component: {fileID: 2980292418791327217}
   - component: {fileID: 6542203160029134013}
+  - component: {fileID: 6706494297191833818}
   - component: {fileID: 5947789790185552831}
   m_Layer: 10
   m_Name: BarrelItem
@@ -29,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 8970657656409521084}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.64, y: -2.41, z: 0}
-  m_LocalScale: {x: 1.3437049, y: 1.3437049, z: 1.3437049}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,7 +98,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8970657656409521084}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -124,7 +125,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.0023319572}
+  m_Offset: {x: 0.0008582324, y: -0.0011011958}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -134,7 +135,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8885259, y: 0.9393662}
+  m_Size: {x: 0.89024234, y: 0.94623256}
   m_EdgeRadius: 0
 --- !u!50 &6542203160029134013
 Rigidbody2D:
@@ -163,6 +164,61 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &6706494297191833818
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970657656409521084}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9375, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.38075247, y: 0.4763909}
+      - {x: -0.4417209, y: 0.18308312}
+      - {x: -0.4434184, y: -0.18955573}
+      - {x: -0.3743135, y: -0.4742446}
+      - {x: 0.38075238, y: -0.4720983}
+      - {x: 0.43955097, y: -0.18893522}
+      - {x: 0.44605312, y: 0.18977997}
+      - {x: 0.3786061, y: 0.47424456}
+  m_UseDelaunayMesh: 0
 --- !u!114 &5947789790185552831
 MonoBehaviour:
   m_ObjectHideFlags: 0

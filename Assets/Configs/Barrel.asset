@@ -15,5 +15,5 @@ MonoBehaviour:
   id: barrel_item
   coinsReward: 10
   maxHealth: 20
-  cost: 1
+  cost: 5
   icon: {fileID: -8568042794190644651, guid: 43969730e387c16478391e363099510b, type: 3}

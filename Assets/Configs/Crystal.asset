@@ -15,5 +15,5 @@ MonoBehaviour:
   id: crystal_item
   coinsReward: 7
   maxHealth: 50
-  cost: 1
+  cost: 12
   icon: {fileID: 7479642271789056252, guid: c4fd47664e6dc9147949b41721a19129, type: 3}

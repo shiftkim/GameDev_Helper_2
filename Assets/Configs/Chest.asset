@@ -15,5 +15,5 @@ MonoBehaviour:
   id: chest_item
   coinsReward: 15
   maxHealth: 10
-  cost: 1
+  cost: 10
   icon: {fileID: -6834524911116659543, guid: 03a677b377fec8b4a8f19cd2487999fe, type: 3}

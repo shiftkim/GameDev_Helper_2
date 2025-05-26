@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2980292418791327217}
   - component: {fileID: 6542203160029134013}
   - component: {fileID: 7056090410753057369}
+  - component: {fileID: 8379618064292952729}
   m_Layer: 10
   m_Name: ChestItem
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8970657656409521084}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.64, y: -2.41, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -97,7 +98,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8970657656409521084}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -134,7 +135,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.7493696}
+  m_Size: {x: 0.93990755, y: 0.7493696}
   m_EdgeRadius: 0
 --- !u!50 &6542203160029134013
 Rigidbody2D:
@@ -178,3 +179,57 @@ MonoBehaviour:
   itemInfo: {fileID: 11400000, guid: de1fcf9bed45ac84da9b70c1122e9652, type: 2}
   hurtEffectDuration: 0.25
   hurtColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!60 &8379618064292952729
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970657656409521084}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.78125}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.3451705, y: 0.36515474}
+      - {x: -0.46975374, y: 0.17052722}
+      - {x: -0.47209817, y: -0.36057705}
+      - {x: 0.46780574, y: -0.36057705}
+      - {x: 0.47163928, y: 0.16411522}
+      - {x: 0.4034172, y: 0.3057179}
+      - {x: 0.27987704, y: 0.3584307}
+  m_UseDelaunayMesh: 0

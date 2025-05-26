@@ -3,9 +3,11 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+[RequireComponent(typeof(Animator))]
 public class ShopItem : MonoBehaviour
 {
    public event Action<ItemInfo> OnBuyClicked;
+
 
    [SerializeField] private Image icon;
    [SerializeField] private TextMeshProUGUI priceText;
@@ -43,5 +45,22 @@ public class ShopItem : MonoBehaviour
       Debug.Log($"Setting purchased overlay ? {_itemInfo.id}");
       purchasedOverlay.SetActive(true);
       buyButton.interactable = false;
+   }
+   
+   public void SetUnpurchased()
+   {
+      Debug.Log($"Setting unpurchased overlay for {_itemInfo.id}");
+      purchasedOverlay.SetActive(false);
+      buyButton.interactable = true;
+   }
+   
+   public void TriggerNotEnoughMoney()
+   {
+      Animator animator = GetComponent<Animator>();
+      if (animator != null)
+      {
+         animator.ResetTrigger("notEnoughMoney");
+         animator.SetTrigger("notEnoughMoney");
+      }
    }
 }

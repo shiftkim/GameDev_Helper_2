@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,8 +7,7 @@ public class Shop : MonoBehaviour
    [SerializeField] private Transform contentRoot;
    [SerializeField] private GameObject itemButtonPrefab;
    [SerializeField] private List<ItemInfo> shopItems;
-   
-   private Animator _animator;
+   [SerializeField] private Animator _animator;
     
    private void Awake()
    {
@@ -24,21 +24,15 @@ public class Shop : MonoBehaviour
    
    private void HandleBuyClicked(ItemInfo item)
    {
-      Debug.Log($"HandleBuyClicked called for item id: {item.id}");
-    
       if (Inventory.Instance.TryBuyItem(item))
       {
-         Debug.Log($"Item {item.id} successfully bought, updating UI...");
-        
          foreach (Transform child in contentRoot)
          {
             var shopItem = child.GetComponent<ShopItem>();
             if (shopItem != null)
             {
-               Debug.Log($"Checking ShopItem with id: {shopItem.ItemId}");
                if (shopItem.ItemId == item.id)
                {
-                  Debug.Log($"Found matching ShopItem {item.id}, calling SetPurchased()");
                   shopItem.SetPurchased();
                   break;
                }
@@ -48,9 +42,18 @@ public class Shop : MonoBehaviour
       else
       {
          Debug.Log($"Failed to buy item {item.id}, not enough coins or already purchased.");
+         foreach (Transform child in contentRoot)
+         {
+            var shopItem = child.GetComponent<ShopItem>();
+            if (shopItem != null && shopItem.ItemId == item.id)
+            {
+               shopItem.TriggerNotEnoughMoney();
+               break;
+            }
+         }
       }
    }
-   
+  
    private void Update()
    {
       if (Input.GetKeyDown(KeyCode.Tab))
@@ -63,4 +66,19 @@ public class Shop : MonoBehaviour
    {
       gameObject.SetActive(false);
    }
+   
+   // public void ResetShop()
+   // {
+   //    Debug.Log("Shop reset requested");
+   //    Inventory.Instance.ResetShop();
+   //  
+   //    foreach (Transform child in contentRoot)
+   //    {
+   //       var shopItem = child.GetComponent<ShopItem>();
+   //       if (shopItem != null)
+   //       {
+   //          shopItem.SetUnpurchased();
+   //       }
+   //    }
+   // }
 }
