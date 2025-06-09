@@ -14,7 +14,7 @@ public class Launcher : MonoBehaviour
    [Header("Horizontal Movement")]
    [SerializeField] private float minSpawnX = -8f;
    [SerializeField] private float maxSpawnX = 8f;
-   [SerializeField] private bool visualizeHorizontalRange = true;
+   // [SerializeField] private bool visualizeHorizontalRange = true;
    
    private GameObject projectilePrefab;
    private float nextFireTime;

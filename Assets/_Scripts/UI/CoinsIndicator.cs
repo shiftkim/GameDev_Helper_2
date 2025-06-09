@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -9,18 +10,18 @@ public class CoinsIndicator : MonoBehaviour
     {
         if(coinCountText == null)
             Debug.LogError("CoinsIndicator: text element is not assigned to coinCountText");
-    }
-
-    private void OnEnable()
-    {
         Inventory.OnCoinsChanged += UpdateText;
     }
 
-    private void OnDisable()
+    private void Start()
+    {
+        UpdateText(Inventory.Instance.Coins);
+    }
+
+    private void OnDestroy()
     {
         Inventory.OnCoinsChanged -= UpdateText;
     }
-
     
     private void UpdateText(int coinsAmount)
     {

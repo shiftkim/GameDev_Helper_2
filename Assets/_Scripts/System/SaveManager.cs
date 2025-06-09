@@ -3,6 +3,7 @@ using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
 
+
 public static class SaveManager
 {
    private static readonly string SavePath = Path.Combine(Application.persistentDataPath, "inventory.json");

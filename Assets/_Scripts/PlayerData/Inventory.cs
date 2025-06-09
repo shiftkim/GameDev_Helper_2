@@ -8,6 +8,16 @@ public class Inventory : MonoBehaviour
     public static event Action<int> OnCoinsChanged;
     public int Coins => _data.coins;
 
+    //Дописать на 2 уроке
+    public void ResetShop()
+    {
+        Debug.Log("Resetting shop - clearing all purchases");
+        _data.PurchasedItems.Clear();
+        _data.coins = 0;
+        SaveManager.SaveData(_data);
+        OnCoinsChanged?.Invoke(Coins);
+    }
+    
     private void Awake()
     {
         if (Instance == null)
@@ -37,23 +47,11 @@ public class Inventory : MonoBehaviour
 
     public bool IsItemPurchased(string id) =>
         _data.PurchasedItems.TryGetValue(id, out var purchased) && purchased;
-
-    private void Start()
-    {
-        OnCoinsChanged?.Invoke(Coins);
-    }
     
-    // public void ResetShop()
-    // {
-    //     Debug.Log("Resetting shop - clearing all purchases");
-    //     _data.PurchasedItems.Clear();
-    //     _data.coins = 0;
-    //     SaveManager.SaveData(_data);
-    //     OnCoinsChanged?.Invoke(Coins);
-    // }
     
     private void OnEnable()
     {
+        OnCoinsChanged?.Invoke(Coins);
         Item.OnItemDestroyed += AddCoins;
     }
     

@@ -222,10 +222,10 @@ GameObject:
   - component: {fileID: 3823798830647105103}
   - component: {fileID: 7268385958025019353}
   - component: {fileID: 6719854579987937770}
-  - component: {fileID: -908273745854057751}
   - component: {fileID: 4921009275182638338}
   - component: {fileID: 7683982581460984058}
   - component: {fileID: 5383140151257261815}
+  - component: {fileID: -908273745854057751}
   m_Layer: 5
   m_Name: ShopItem
   m_TagString: Untagged
@@ -292,22 +292,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.25
---- !u!114 &-908273745854057751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780244067693807067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e0168b203531fa4b9854d8c2d6e6b37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  icon: {fileID: 4545452603871459694}
-  priceText: {fileID: 1906687817937565920}
-  buyButton: {fileID: 4921009275182638338}
-  purchasedOverlay: {fileID: 2900518115880148660}
 --- !u!114 &4921009275182638338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +371,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-908273745854057751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780244067693807067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e0168b203531fa4b9854d8c2d6e6b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 4545452603871459694}
+  priceText: {fileID: 1906687817937565920}
+  buyButton: {fileID: 4921009275182638338}
+  purchasedOverlay: {fileID: 2900518115880148660}
 --- !u!1 &2900518115880148660
 GameObject:
   m_ObjectHideFlags: 0

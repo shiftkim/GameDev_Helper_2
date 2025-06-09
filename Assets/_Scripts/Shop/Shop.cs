@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,27 +28,19 @@ public class Shop : MonoBehaviour
          foreach (Transform child in contentRoot)
          {
             var shopItem = child.GetComponent<ShopItem>();
-            if (shopItem != null)
-            {
-               if (shopItem.ItemId == item.id)
-               {
-                  shopItem.SetPurchased();
-                  break;
-               }
-            }
+            if (shopItem == null || shopItem.ItemId != item.id) continue;
+            shopItem.SetPurchased();
+            break;
          }
       }
       else
       {
-         Debug.Log($"Failed to buy item {item.id}, not enough coins or already purchased.");
          foreach (Transform child in contentRoot)
          {
             var shopItem = child.GetComponent<ShopItem>();
-            if (shopItem != null && shopItem.ItemId == item.id)
-            {
-               shopItem.TriggerNotEnoughMoney();
-               break;
-            }
+            if (shopItem == null || shopItem.ItemId != item.id) continue;
+            shopItem.TriggerNotEnoughMoney();
+            break;
          }
       }
    }
@@ -67,18 +58,19 @@ public class Shop : MonoBehaviour
       gameObject.SetActive(false);
    }
    
-   // public void ResetShop()
-   // {
-   //    Debug.Log("Shop reset requested");
-   //    Inventory.Instance.ResetShop();
-   //  
-   //    foreach (Transform child in contentRoot)
-   //    {
-   //       var shopItem = child.GetComponent<ShopItem>();
-   //       if (shopItem != null)
-   //       {
-   //          shopItem.SetUnpurchased();
-   //       }
-   //    }
-   // }
+   //Дописать на 2 уроке
+   public void ResetShopView()
+   {
+      Debug.Log("Shop reset requested");
+      Inventory.Instance.ResetShop();
+    
+      foreach (Transform child in contentRoot)
+      {
+         var shopItem = child.GetComponent<ShopItem>();
+         if (shopItem != null)
+         {
+            shopItem.SetUnpurchased();
+         }
+      }
+   }
 }

@@ -54,8 +54,10 @@ MonoBehaviour:
   duration: 1
   tickRate: 0
   explosionForce: 20
-  upwardsModifier: 1.4
-  torqueForce: 6
+  upwardsForceRatio: 1
+  applyUpwardLift: 1
+  torqueForce: 12
+  applyTorque: 1
 --- !u!199 &3163252095286613465
 ParticleSystemRenderer:
   serializedVersion: 6
